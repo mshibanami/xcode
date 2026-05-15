@@ -10,6 +10,9 @@
     "url": "https://github.com/mshibanami/xcode.git"
   },
   "author": "Evan Bacon <bacon@expo.io> (https://github.com/evanbacon)",
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "pbxproj",
     "xcodeproj",
