@@ -1,5 +1,5 @@
 {
-  "name": "@bacons/xcode",
+  "name": "@mshibanami-org/xcode",
   "version": "1.0.0-alpha.33",
   "main": "./build/index",
   "types": "./build/index.d.ts",
@@ -7,9 +7,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/EvanBacon/xcode.git"
+    "url": "https://github.com/mshibanami/xcode.git"
   },
-  "author": "Evan Bacon <bacon@expo.io> (https://github.com/evanbacon)",
+  "author": "Manabu Nakazawa",
   "keywords": [
     "pbxproj",
     "xcodeproj",

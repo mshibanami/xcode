@@ -3,7 +3,7 @@
  *
  * @example
  * ```ts
- * import * as workspace from "@bacons/xcode/workspace";
+ * import * as workspace from "@mshibanami-org/xcode/workspace";
  *
  * // Parse an xcworkspacedata file
  * const ws = workspace.parse(xml);

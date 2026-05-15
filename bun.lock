@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "@bacons/xcode",
+      "name": "@mshibanami-org/xcode",
       "dependencies": {
         "@expo/plist": "^0.0.18",
         "debug": "^4.3.4",

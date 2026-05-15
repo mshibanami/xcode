@@ -1,9 +1,9 @@
-# `@bacons/xcode`
+# `@mshibanami-org/xcode`
 
 The fastest and most accurate parser for Xcode project files (`.pbxproj`). **10-28x faster** than alternatives (xcode, XcodeProj, xcodeproj) with better error messages and full spec compliance.
 
 ```
-bun add @bacons/xcode
+bun add @mshibanami-org/xcode
 ```
 
 ## Performance
@@ -15,7 +15,7 @@ Run benchmarks with `bun run bench` or `bun run bench:compare` for cross-languag
 
 | Parser | Language | Time (29KB) | Time (263KB) | Relative |
 |--------|----------|-------------|--------------|----------|
-| **@bacons/xcode** | TypeScript | **0.15ms** | **0.81ms** | **1x** |
+| **@mshibanami-org/xcode** | TypeScript | **0.15ms** | **0.81ms** | **1x** |
 | xcode (legacy) | JavaScript | 1.54ms | crashes | 10x slower |
 | XcodeProj (Tuist) | Swift | 2.00ms | 11.2ms | 13x slower |
 | xcodeproj (CocoaPods) | Ruby | 3.63ms | 22.5ms | 24x slower |
@@ -72,9 +72,9 @@ Consider the following format comparison.
 }
 ```
 
-That same object would look like this in `@bacons/xcode`:
+That same object would look like this in `@mshibanami-org/xcode`:
 
-**`@bacons/xcode` output (NEW)**
+**`@mshibanami-org/xcode` output (NEW)**
 
 ```json
 {
@@ -100,7 +100,7 @@ import {
   PBXLegacyTarget,
   PBXNativeTarget,
   XcodeProject,
-} from "@bacons/xcode";
+} from "@mshibanami-org/xcode";
 
 const project = XcodeProject.open("/path/to/project.pbxproj");
 
@@ -111,7 +111,7 @@ project.rootObject.props.targets;
 Create a Swift file:
 
 ```ts
-import { PBXBuildFile, PBXFileReference } from "@bacons/xcode";
+import { PBXBuildFile, PBXFileReference } from "@mshibanami-org/xcode";
 import path from "path";
 
 // Get `project` from XcodeProject.
@@ -133,7 +133,7 @@ Parse and manipulate Xcode scheme files (`.xcscheme`). Schemes define how target
 ### Low-level API
 
 ```ts
-import * as scheme from "@bacons/xcode/scheme";
+import * as scheme from "@mshibanami-org/xcode/scheme";
 import fs from "fs";
 
 // Parse an xcscheme file
@@ -157,7 +157,7 @@ fs.writeFileSync("/path/to/App.xcscheme", outputXml);
 ### High-level API
 
 ```ts
-import { XcodeProject, XCScheme } from "@bacons/xcode";
+import { XcodeProject, XCScheme } from "@mshibanami-org/xcode";
 
 // Load project and get schemes
 const project = XcodeProject.open("/path/to/project.pbxproj");
@@ -190,7 +190,7 @@ project.saveScheme(targetScheme);
 Parse and build `xcschememanagement.plist` files that control scheme visibility and ordering:
 
 ```ts
-import * as scheme from "@bacons/xcode/scheme";
+import * as scheme from "@mshibanami-org/xcode/scheme";
 import fs from "fs";
 
 const plist = fs.readFileSync("/path/to/xcschememanagement.plist", "utf-8");
@@ -210,7 +210,7 @@ Parse and manipulate Xcode workspace files (`.xcworkspace`). Workspaces group mu
 ### Low-level API
 
 ```ts
-import * as workspace from "@bacons/xcode/workspace";
+import * as workspace from "@mshibanami-org/xcode/workspace";
 import fs from "fs";
 
 // Parse a workspace file
@@ -234,7 +234,7 @@ fs.writeFileSync("/path/to/contents.xcworkspacedata", outputXml);
 ### High-level API
 
 ```ts
-import { XCWorkspace } from "@bacons/xcode";
+import { XCWorkspace } from "@mshibanami-org/xcode";
 
 // Open an existing workspace
 const workspace = XCWorkspace.open("/path/to/MyApp.xcworkspace");
@@ -281,7 +281,7 @@ Manage `IDEWorkspaceChecks.plist` files that store workspace check states. Intro
 The primary use is suppressing the macOS 32-bit deprecation warning:
 
 ```ts
-import { XCWorkspace, IDEWorkspaceChecks } from "@bacons/xcode";
+import { XCWorkspace, IDEWorkspaceChecks } from "@mshibanami-org/xcode";
 
 // Suppress the 32-bit deprecation warning
 const workspace = XCWorkspace.open("/path/to/MyApp.xcworkspace");
@@ -293,7 +293,7 @@ checks.mac32BitWarningComputed = true;
 checks.save();
 
 // Low-level API
-import * as workspace from "@bacons/xcode/workspace";
+import * as workspace from "@mshibanami-org/xcode/workspace";
 
 const plist = workspace.parseChecks(plistString);
 console.log(plist.IDEDidComputeMac32BitWarning); // true
@@ -308,7 +308,7 @@ Parse and manipulate Xcode configuration files (`.xcconfig`). These files define
 ### Low-level API
 
 ```ts
-import * as xcconfig from "@bacons/xcode/xcconfig";
+import * as xcconfig from "@mshibanami-org/xcode/xcconfig";
 import fs from "fs";
 
 // Parse an xcconfig string
@@ -386,7 +386,7 @@ Access and manipulate shared data directories (`xcshareddata`) which contain sch
 ### High-level API
 
 ```ts
-import { XcodeProject, XCSharedData } from "@bacons/xcode";
+import { XcodeProject, XCSharedData } from "@mshibanami-org/xcode";
 
 // Get shared data from a project
 const project = XcodeProject.open("/path/to/project.pbxproj");
@@ -419,7 +419,7 @@ sharedData.save();
 Parse and build Xcode breakpoint files (`Breakpoints_v2.xcbkptlist`):
 
 ```ts
-import * as breakpoints from "@bacons/xcode/breakpoints";
+import * as breakpoints from "@mshibanami-org/xcode/breakpoints";
 import fs from "fs";
 
 // Parse breakpoint file
@@ -465,7 +465,7 @@ Access and manipulate user data directories (`xcuserdata`) which contain per-use
 ### High-level API
 
 ```ts
-import { XcodeProject, XCUserData } from "@bacons/xcode";
+import { XcodeProject, XCUserData } from "@mshibanami-org/xcode";
 
 // Get user data from a project
 const project = XcodeProject.open("/path/to/project.pbxproj");
@@ -507,7 +507,7 @@ myUserData.save();
 ### Standalone Usage
 
 ```ts
-import { XCUserData } from "@bacons/xcode";
+import { XCUserData } from "@mshibanami-org/xcode";
 
 // Open existing user data
 const userData = XCUserData.open(
@@ -535,7 +535,7 @@ const users = XCUserData.discoverUsers(
 Parse and build workspace settings files (`WorkspaceSettings.xcsettings`):
 
 ```ts
-import * as settings from "@bacons/xcode/settings";
+import * as settings from "@mshibanami-org/xcode/settings";
 import fs from "fs";
 
 // Parse settings file
@@ -563,7 +563,7 @@ Add Swift Package Manager dependencies to your Xcode projects with full wiring h
 ### Adding Remote Packages
 
 ```ts
-import { XcodeProject } from "@bacons/xcode";
+import { XcodeProject } from "@mshibanami-org/xcode";
 
 const project = XcodeProject.open("/path/to/project.pbxproj");
 const rootProject = project.rootObject;
@@ -701,7 +701,7 @@ import {
   parse,
   /** Given a JSON representation of a `pbxproj`, return a `.pbxproj` string that can be parsed by Xcode. */
   build,
-} from "@bacons/xcode/json";
+} from "@mshibanami-org/xcode/json";
 
 import fs from "fs";
 import path from "path";

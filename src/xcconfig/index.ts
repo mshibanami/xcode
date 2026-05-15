@@ -3,7 +3,7 @@
  *
  * @example
  * ```ts
- * import * as xcconfig from "@bacons/xcode/xcconfig";
+ * import * as xcconfig from "@mshibanami-org/xcode/xcconfig";
  *
  * // Parse xcconfig content
  * const config = xcconfig.parse(`
