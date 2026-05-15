@@ -42,7 +42,7 @@ function formatSize(bytes: number): string {
 const totalBytes = fixtures.reduce((sum, f) => sum + f.bytes, 0);
 
 console.log(`\n========================================`);
-console.log(`@bacons/xcode Parser Benchmark`);
+console.log(`@mshibanami-org/xcode Parser Benchmark`);
 console.log(`========================================`);
 console.log(`Total fixture data: ${(totalBytes / 1024).toFixed(1)}KB`);
 console.log(`Fixtures: ${fixtures.length} files\n`);
@@ -100,7 +100,7 @@ summary(() => {
     const content = fixtureContents.get("react-native-74")!;
     const filePath = fixturePaths.get("react-native-74")!;
 
-    bench("@bacons/xcode parse()", () => {
+    bench("@mshibanami-org/xcode parse()", () => {
       parse(content);
     });
 
@@ -112,7 +112,7 @@ summary(() => {
 
 // Note: Legacy xcode crashes on swift-protobuf with:
 // "Expected "/*", "=", or [A-Za-z0-9_.] but "/" found"
-// This demonstrates the spec-compliance advantage of @bacons/xcode
+// This demonstrates the spec-compliance advantage of @mshibanami-org/xcode
 
 await run({
   avg: true,
@@ -140,4 +140,4 @@ const throughput = (largestBytes * iterations / 1024 / 1024) / (elapsed / 1000);
 
 console.log(`parse() throughput: ${throughput.toFixed(2)} MB/s`);
 console.log(`\nNote: Legacy xcode package crashes on swift-protobuf fixture`);
-console.log(`      demonstrating @bacons/xcode's spec-compliance advantage.\n`);
+console.log(`      demonstrating @mshibanami-org/xcode's spec-compliance advantage.\n`);

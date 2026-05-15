@@ -1,15 +1,18 @@
 {
-  "name": "@bacons/xcode",
-  "version": "1.0.0-alpha.33",
+  "name": "@mshibanami-org/xcode",
+  "version": "1.0.0",
   "main": "./build/index",
   "types": "./build/index.d.ts",
   "description": "pbxproj parser",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/EvanBacon/xcode.git"
+    "url": "https://github.com/mshibanami/xcode.git"
   },
   "author": "Evan Bacon <bacon@expo.io> (https://github.com/evanbacon)",
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "pbxproj",
     "xcodeproj",
@@ -50,11 +53,13 @@
     "build"
   ],
   "dependencies": {
-    "@expo/plist": "^0.0.18",
+    "@expo/plist": "^0.5.3",
     "debug": "^4.3.4",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "@changesets/changelog-github": "^0.7.0",
+    "@changesets/cli": "^2.31.0",
     "@chevrotain/types": "10.1.1",
     "@expo/spawn-async": "^1.7.2",
     "@tsconfig/node14": "^1.0.1",
@@ -80,6 +85,9 @@
     "bench": "bun run bench/parse.bench.ts",
     "bench:compare": "bun run bench/compare.ts",
     "bench:setup": "cd bench/swift-bench && swift build -c release",
-    "prepare": "bun run clean && bun run build"
+    "prepare": "bun run clean && bun run build",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "pnpm build && changeset publish"
   }
 }

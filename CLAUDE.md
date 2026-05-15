@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-This is `@bacons/xcode`, a TypeScript package that provides a spec-compliant parser for Xcode's `.pbxproj` files (project files). It's designed as a faster, more accurate alternative to the legacy `xcode` npm package, using Chevrotain parser instead of PEG.js.
+This is `@mshibanami-org/xcode`, a TypeScript package that provides a spec-compliant parser for Xcode's `.pbxproj` files (project files). It's designed as a faster, more accurate alternative to the legacy `xcode` npm package, using Chevrotain parser instead of PEG.js.
 
 The package offers two main APIs:
 1. **Low-level JSON API** (`src/json/`) - Direct parsing and building of pbxproj files

@@ -3,7 +3,7 @@
  * Cross-language pbxproj parser comparison benchmark
  *
  * Compares:
- * - @bacons/xcode (TypeScript/Chevrotain)
+ * - @mshibanami-org/xcode (TypeScript/Chevrotain)
  * - legacy xcode npm package (JavaScript/PEG.js)
  * - xcodeproj gem (Ruby/CocoaPods)
  * - XcodeProj (Swift/Tuist)
@@ -18,7 +18,7 @@ import { execSync, spawnSync } from "child_process";
 import { readFileSync, existsSync } from "fs";
 import { join } from "path";
 
-// @bacons/xcode
+// @mshibanami-org/xcode
 import { parse } from "../src/json";
 // Legacy xcode package
 import legacyXcode from "xcode";
@@ -68,7 +68,7 @@ function benchBaconsXcode(
   const maxMs = Math.max(...times);
 
   return {
-    parser: "@bacons/xcode",
+    parser: "@mshibanami-org/xcode",
     fixture,
     avgMs,
     minMs,
@@ -317,7 +317,7 @@ async function main() {
   console.log("");
 
   console.log("Parsers being compared:");
-  console.log("  - @bacons/xcode (TypeScript, Chevrotain)");
+  console.log("  - @mshibanami-org/xcode (TypeScript, Chevrotain)");
   console.log("  - xcode (JavaScript, PEG.js) - legacy npm package");
   console.log("  - xcodeproj (Ruby) - CocoaPods gem");
   console.log("  - XcodeProj (Swift) - Tuist library");
@@ -330,8 +330,8 @@ async function main() {
 
     console.log(`\nBenchmarking: ${fixture.name} (${formatSize(fixture.bytes)})...`);
 
-    // @bacons/xcode
-    process.stdout.write("  @bacons/xcode... ");
+    // @mshibanami-org/xcode
+    process.stdout.write("  @mshibanami-org/xcode... ");
     const baconsResult = benchBaconsXcode(content, fixture.name, iterations);
     console.log(`${baconsResult.avgMs.toFixed(2)}ms`);
     allResults.push(baconsResult);

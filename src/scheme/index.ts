@@ -3,7 +3,7 @@
  *
  * @example
  * ```ts
- * import * as scheme from "@bacons/xcode/scheme";
+ * import * as scheme from "@mshibanami-org/xcode/scheme";
  *
  * // Parse an xcscheme file
  * const xcscheme = scheme.parse(xml);

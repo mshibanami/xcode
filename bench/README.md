@@ -1,12 +1,12 @@
 # Benchmarks
 
-This directory contains benchmarks comparing `@bacons/xcode` against other pbxproj parsers.
+This directory contains benchmarks comparing `@mshibanami-org/xcode` against other pbxproj parsers.
 
 ## Parsers Compared
 
 | Parser | Language | Library |
 |--------|----------|---------|
-| @bacons/xcode | TypeScript | Chevrotain |
+| @mshibanami-org/xcode | TypeScript | Chevrotain |
 | xcode (legacy) | JavaScript | PEG.js |
 | xcodeproj | Ruby | CocoaPods gem |
 | XcodeProj | Swift | Tuist |
@@ -49,7 +49,7 @@ swift build -c release
 
 ### `bun run bench`
 
-Runs detailed benchmarks of `@bacons/xcode` using [mitata](https://github.com/evanwashere/mitata):
+Runs detailed benchmarks of `@mshibanami-org/xcode` using [mitata](https://github.com/evanwashere/mitata):
 - Parse time across different fixture sizes
 - XcodeProject.open() (full object graph)
 - Round-trip (parse + build)
@@ -68,7 +68,7 @@ Typical results on Apple Silicon (M1/M2):
 
 | Parser | 29KB (RN) | 263KB (Protobuf) |
 |--------|-----------|------------------|
-| @bacons/xcode | ~0.1ms | ~1ms |
+| @mshibanami-org/xcode | ~0.1ms | ~1ms |
 | xcode (legacy) | ~1.4ms | ❌ crashes |
 | xcodeproj (Ruby) | ~2-3ms | ~15-20ms |
 | XcodeProj (Swift) | ~0.5ms | ~3-4ms |

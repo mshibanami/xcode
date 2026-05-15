@@ -3,7 +3,7 @@
  *
  * @example
  * ```ts
- * import * as settings from "@bacons/xcode/settings";
+ * import * as settings from "@mshibanami-org/xcode/settings";
  *
  * // Parse a workspace settings file
  * const config = settings.parse(plistString);

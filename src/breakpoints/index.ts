@@ -3,7 +3,7 @@
  *
  * @example
  * ```ts
- * import * as breakpoints from "@bacons/xcode/breakpoints";
+ * import * as breakpoints from "@mshibanami-org/xcode/breakpoints";
  *
  * // Parse a breakpoint list file
  * const list = breakpoints.parse(xml);
