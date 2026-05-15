@@ -9,7 +9,7 @@
     "type": "git",
     "url": "https://github.com/mshibanami/xcode.git"
   },
-  "author": "Manabu Nakazawa",
+  "author": "Evan Bacon <bacon@expo.io> (https://github.com/evanbacon)",
   "keywords": [
     "pbxproj",
     "xcodeproj",
