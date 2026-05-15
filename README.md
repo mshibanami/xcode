@@ -1,5 +1,8 @@
 # `@mshibanami-org/xcode`
 
+> [!IMPORTANT]
+> This is a fork of Evan Bacon's [@evans/xcode](https://www.npmjs.com/package/@bacons/xcode) package with updated dependencies. This package will be deprecated in favor of the original once the dependencies are updated there. See more details here: [EvanBacon/xcode#32](https://github.com/EvanBacon/xcode/issues/32)
+
 The fastest and most accurate parser for Xcode project files (`.pbxproj`). **10-28x faster** than alternatives (xcode, XcodeProj, xcodeproj) with better error messages and full spec compliance.
 
 ```
