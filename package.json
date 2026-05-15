@@ -1,6 +1,6 @@
 {
   "name": "@mshibanami-org/xcode",
-  "version": "1.0.0-alpha.33",
+  "version": "1.0.0",
   "main": "./build/index",
   "types": "./build/index.d.ts",
   "description": "pbxproj parser",
