@@ -5,7 +5,7 @@
     "": {
       "name": "@mshibanami-org/xcode",
       "dependencies": {
-        "@expo/plist": "0.5.3",
+        "@expo/plist": "^0.5.3",
         "debug": "^4.3.4",
         "uuid": "^8.3.2",
       },
