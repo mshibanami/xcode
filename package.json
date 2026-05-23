@@ -55,7 +55,7 @@
   "dependencies": {
     "@expo/plist": "^0.5.3",
     "debug": "^4.3.4",
-    "uuid": "^8.3.2"
+    "uuid": "^14.0.0"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.7.0",
